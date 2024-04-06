@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Add";
+}
+@model PhamQuy.Models.Product
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+
+<h1>Add category</h1>
+
+
+<form asp-action="Add" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

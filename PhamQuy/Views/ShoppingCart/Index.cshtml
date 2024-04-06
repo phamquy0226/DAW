@@ -1,0 +1,36 @@
+﻿@model DAW.Models.ShoppingCart
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Your Cart</h2>
+<a asp-controller="Home" asp-action="Index">
+    <button class="btn btn-outline-dark"><i class="bi-cart-fill me-1">Quay lại</i></button>
+</a>
+<table class="table-bordered m-2">
+    <thead class=" bg-warning text-black">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Quantity</td>
+                <td>@item.Price</td>
+                <td>@(item.Price * item.Quantity)</td>
+                <td>
+                    <a asp-action="RemoveFromCart" asp-route-productId="@item.ProductId">Remove</a>
+                    <a asp-action="Checkout">CheckOut</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

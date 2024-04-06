@@ -1,0 +1,13 @@
+﻿
+@model int
+@{
+    ViewData["Title"] = "OrderCompleted";
+}
+
+<h2>Order Completed</h2>
+
+<p>Your order with ID @Model has been placed successfully.</p>
+
+<a asp-controller="Home" asp-action="Index">
+    <button class="btn btn-outline-dark"><i class="bi-cart-fill me-1">Tiếp tục mua hàng</i></button>
+</a>
